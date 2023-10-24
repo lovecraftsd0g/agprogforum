@@ -156,15 +156,17 @@ morse_code = {
     'Y': '-.--', 'Z': '--..',
     '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....',
     '6': '-....', '7': '--...', '8': '---..', '9': '----.',
-    ',': '--..--', '.': '.-.-.-', '?': '..--..', ' ':'.......' 
+    ',': '--..--', '.': '.-.-.-', '?': '..--..'
 }
 
 listwo = []
-userin = input("pls input str to convert into moarse")
+userin = input("pls input str to convert into moarse: ")
 userin = userin.upper() #i mostly got this mthod from dennis i actually first thought i had to convert a moarse into a str but i will try my best to put my twist into it so credit to dennis
-listwo = userin
-for word in userin:
+listwo.append(userin)
+for word in listwo:
     for w in word:
-        if w in morse_code.keys():
-            thecode += morse_code[w]
+        if w in morse_code:
+            thecode = thecode+ morse_code[w] + " "
+        else:
+            pass
 print(thecode)
